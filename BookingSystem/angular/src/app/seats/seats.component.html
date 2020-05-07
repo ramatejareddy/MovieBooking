@@ -25,7 +25,7 @@
     <div >
       <label >No Of Tickets:</label>
     <div><input type="number" name="txtcost" [(ngModel)]="fare.noOfSeats"  class="form-control" placeholder="Enter the no of tickets you want to boook"
-       #noOfTickets="ngModel"  value ="1" step="10" min="0" max="10" pattern="^[0-9]+$" ng-pattern-restrict required  ></div>
+       #noOfTickets="ngModel"   step="10" min="0" max="10" maxlength="4" pattern="^[0-9]+$"  ng-pattern-restrict required  ></div>
     <div  class="alert alert-danger " *ngIf="noOfTickets.invalid && (noOfTickets.touched || noOfTickets.dirty)">No of Tickets  is
       required.</div>      
       
@@ -33,6 +33,7 @@
     
     <div ><button [disabled]="!frm.valid" style="background-color: sandybrown;"  class="button">Book Tickets</button></div><br>
   </form>
+  <input id="number" type="number" value="42">
   
 </section>
 

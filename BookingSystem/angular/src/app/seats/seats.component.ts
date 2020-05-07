@@ -86,6 +86,10 @@ export class SeatsComponent implements OnInit {
     }
     
     else{
+      if(this.fare.noOfSeats>10){
+        this.errMsg="No Of Tickets you want to book cannot be greater than 10";
+      }
+      else{
     this.bookingService.blockSeats(this.fare).subscribe((data)=>{console.log("Block the  seats");
     console.log("data",data);
     this.seatsBooked=data;
@@ -101,6 +105,7 @@ export class SeatsComponent implements OnInit {
     });
     console.log("total fare:"+this.fare);
   }
+}
     
   }
   /********************************************************************************
